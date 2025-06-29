@@ -26,7 +26,7 @@ def create_post():
     posts.append(post)  # Add the post to the storage
     return jsonify({"message": "Post created successfully"}), 201
 
-# Route to delete a post by ID
+
 @app.route("/posts/<int:id>", methods=["DELETE"])
 def delete_post(id):
     global posts
