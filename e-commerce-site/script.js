@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Fallback data
             products = [
                 { id: 1, name: "Laptop", price: 899, image: "images/Laptop.jpg" },
-                { id: 2, name: "Headphones", price: 199, image: "images/Headphone.jpg" },
-                { id: 3, name: "Smartphone", price: 699, image: "images/Smartphone.jpg" },
-                { id: 4, name: "Camera", price: 499, image: "images/Camera.jpg" },
+                { id: 2, name: "Headphones", price: 199, image: "images/Headphones.jpg" },
+                { id: 3, name: "Smartphone", price: 699, image: "images/Smartphone.jepg" },
+                { id: 4, name: "Camera", price: 499, image: "images/Camera.jpeg" },
             ];
             displayProducts(products);
         });
