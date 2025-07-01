@@ -32,3 +32,42 @@ searchBar.addEventListener("input", (e) => {
     );
     displayProducts(filteredProducts);
 });
+//Code for adding products to the cart
+// let cart = [];
+
+// function addToCart(productId) {
+//     const product = products.find(p => p.id === productId);
+//     cart.push(product);
+//     alert(`${product.name} added to the cart!`);
+// }
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('http://localhost:3000/products')
+        .then(response => response.json())
+        .then(data => {
+            displayProducts(data);
+        });
+});
+
+function displayProducts(products) {
+    const productList = document.getElementById("productList");
+    productList.innerHTML = "";
+    products.forEach((product) => {
+        const productDiv = document.createElement("div");
+        productDiv.className = "product";
+        productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>$${product.price}</p>
+            <button onclick="addToCart(${product.id})">Add to Cart</button>
+        `;
+        productList.appendChild(productDiv);
+    });
+}
+
+let cart = [];
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    cart.push(product);
+    alert(`${product.name} added to the cart!`);
+}
